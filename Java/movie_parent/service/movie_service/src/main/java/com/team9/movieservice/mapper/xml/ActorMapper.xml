@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team9.movieservice.mapper.ActorMapper">
+
+    <select id="getMoviesByActorID" resultType="com.team9.movieservice.entity.Movie">
+        SELECT m.MovieID, m.Title, m.DirectorID, m.ReleaseDate, m.Duration, m.RateAvg, m.RateCount, m.PicUrl, m.Overview, m.BannerPath
+        FROM Movie m
+                 INNER JOIN MovieActor ma ON m.MovieID = ma.MovieID
+        WHERE ma.ActorID = #{actorID}
+    </select>
+
+    <select id="getTopActorsByMovieCount" resultType="com.team9.movieservice.entity.Actor">
+        SELECT *
+        FROM Actor a
+                 INNER JOIN (
+            SELECT ActorID
+            FROM MovieActor
+            GROUP BY ActorID
+            ORDER BY COUNT(*) DESC
+                LIMIT #{number}
+        ) ma ON a.ActorID = ma.ActorID
+    </select>
+</mapper>

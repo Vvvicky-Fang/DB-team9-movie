@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue May 23 01:08:19 CST 2023
+spring-boot-2.2.1.RELEASE-sources.jar>alimaven=
+spring-boot-2.2.1.RELEASE.jar>alimaven=
+spring-boot-2.2.1.RELEASE.pom>alimaven=

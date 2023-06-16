@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>icu.easyj.maven.plugins</groupId>
+	<artifactId>easyj-maven-plugin</artifactId>
+	<version>1.1.5</version>
+	<packaging>maven-plugin</packaging>
+	<name>icu.easyj.maven.plugins :: easyj-maven-plugin</name>
+	<description>EasyJ开发的Maven插件，包含：简化POM功能、SpringBoot扩展、SpringBoot辅助发布等功能</description>
+	<url>https://easyj.icu</url>
+	<organization>
+		<name>EasyJ开源社区</name>
+		<url>https://github.com/easyj-projects</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>wangliang181230</id>
+			<name>王良</name>
+			<email>841369634@qq.com</email>
+			<url>https://github.com/wangliang181230</url>
+			<organization>浙江蕙康科技有限公司</organization>
+			<organizationUrl>https://www.jyhk.com</organizationUrl>
+			<roles>
+				<role>Java架构师</role>
+			</roles>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git@github.com:easyj-projects/easyj-maven-plugin.git</connection>
+		<developerConnection>scm:git@github.com:easyj-projects/easyj-maven-plugin.git</developerConnection>
+		<url>https://github.com/easyj-projects/easyj-maven-plugin</url>
+	</scm>
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/easyj-projects/easyj-maven-plugin/issues</url>
+	</issueManagement>
+</project>

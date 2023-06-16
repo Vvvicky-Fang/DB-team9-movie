@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team9.movieservice.mapper.ReviewMapper">
+
+
+    <select id="getReviewsByMovieId" resultType="com.team9.movieservice.entity.frontVo.ReviewShowVo">
+        SELECT r.ReviewID, r.MovieId, r.Rating, r.Content, r.UserID, r.ReviewTime, u.Username, u.AvatarPath
+        FROM Review r
+                 INNER JOIN User u ON r.UserID = u.UserID
+        WHERE r.MovieId = #{movieID}
+        ORDER BY r.ReviewTime
+    </select>
+</mapper>

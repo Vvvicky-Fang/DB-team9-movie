@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team9.movieservice.mapper.MovieMapper">
+
+
+    <select id="selectActorsByMovieId" resultType="com.team9.movieservice.entity.Actor">
+        SELECT A.*
+        FROM team9.Actor A
+                 INNER JOIN team9.MovieActor MA
+                            ON A.ActorID = MA.ActorID
+        WHERE MA.MovieID = #{movieId}
+    </select>
+
+    <select id="selectGenresByMovieId" resultType="com.team9.movieservice.entity.MovieGenre">
+        SELECT MG.*
+        FROM team9.MovieGenre MG
+                 INNER JOIN team9.MovieAndGenre MAG
+                            ON MG.GenreID = MAG.GenreID
+        WHERE MAG.MovieID = #{movieId}
+    </select>
+
+
+    <select id="getLatestMovies"  resultType="com.team9.movieservice.entity.Movie">
+        SELECT *
+        FROM Movie
+        ORDER BY ReleaseDate DESC
+            LIMIT #{number}
+    </select>
+
+    <select id="getCollectionByUserId"  resultType="com.team9.movieservice.entity.Movie">
+        SELECT *
+        FROM Movie m
+        where m.MovieID in
+              (SELECT u.MovieID
+               FROM UserMovieFavorite u
+               WHERE u.UserID = #{uid});
+    </select>
+</mapper>
